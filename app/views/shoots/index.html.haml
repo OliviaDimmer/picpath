@@ -1,0 +1,35 @@
+%h1 Listing shoots
+
+%table
+  %thead
+    %tr
+      %th Slug
+      %th Assignment description
+      %th Start
+      %th End
+      %th Location
+      %th Contact name
+      %th Contact phone
+      %th Deadline
+      %th
+      %th
+      %th
+
+  %tbody
+    - @shoots.each do |shoot|
+      %tr
+        %td= shoot.slug
+        %td= shoot.assignment_description
+        %td= shoot.start
+        %td= shoot.end
+        %td= shoot.location
+        %td= shoot.contact_name
+        %td= shoot.contact_phone
+        %td= shoot.deadline
+        %td= link_to 'Show', shoot
+        %td= link_to 'Edit', edit_shoot_path(shoot)
+        %td= link_to 'Destroy', shoot, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Shoot', new_shoot_path

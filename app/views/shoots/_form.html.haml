@@ -1,0 +1,34 @@
+= form_for @shoot do |f|
+  - if @shoot.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@shoot.errors.count, "error")} prohibited this shoot from being saved:"
+      %ul
+        - @shoot.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :slug
+    = f.text_field :slug
+  .field
+    = f.label :assignment_description
+    = f.text_field :assignment_description
+  .field
+    = f.label :start
+    = f.datetime_select :start
+  .field
+    = f.label :end
+    = f.datetime_select :end
+  .field
+    = f.label :location
+    = f.text_field :location
+  .field
+    = f.label :contact_name
+    = f.text_field :contact_name
+  .field
+    = f.label :contact_phone
+    = f.text_field :contact_phone
+  .field
+    = f.label :deadline
+    = f.datetime_select :deadline
+  .actions
+    = f.submit 'Save'

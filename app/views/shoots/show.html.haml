@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%p
+  %b Slug:
+  = @shoot.slug
+%p
+  %b Assignment description:
+  = @shoot.assignment_description
+%p
+  %b Start:
+  = @shoot.start
+%p
+  %b End:
+  = @shoot.end
+%p
+  %b Location:
+  = @shoot.location
+%p
+  %b Contact name:
+  = @shoot.contact_name
+%p
+  %b Contact phone:
+  = @shoot.contact_phone
+%p
+  %b Deadline:
+  = @shoot.deadline
+
+= link_to 'Edit', edit_shoot_path(@shoot)
+\|
+= link_to 'Back', shoots_path
