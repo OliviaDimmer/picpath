@@ -1,6 +1,6 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-good_shoot:
+one:
   slug: MyString
   assignment_description: MyString
   start: 2019-08-29 19:37:18
@@ -11,7 +11,7 @@ good_shoot:
   deadline: 2019-08-29 19:37:18
 
 missing_slug:
-  slug: 
+  slug:
   assignment_description: MyString
   start: 2019-08-29 19:37:18
   end: 2019-08-29 19:37:18

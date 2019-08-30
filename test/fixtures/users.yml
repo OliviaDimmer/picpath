@@ -1,11 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-good_name:
+one:
   name: MyString
   email: MyString
   phone_number: MyString
 
 missing_name:
-  name: 
+  name:
   email: MyString
   phone_number: MyString
