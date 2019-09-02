@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_29_233718) do
+ActiveRecord::Schema.define(version: 2019_09_02_153744) do
 
   create_table "shoots", force: :cascade do |t|
     t.string "slug"
@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 2019_08_29_233718) do
     t.datetime "deadline"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_shoots_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -33,4 +35,5 @@ ActiveRecord::Schema.define(version: 2019_08_29_233718) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "shoots", "users"
 end
