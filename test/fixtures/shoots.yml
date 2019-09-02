@@ -9,7 +9,7 @@ one:
   contact_name: MyString
   contact_phone: MyString
   deadline: 2019-08-29 19:37:18
-  user: Bob Woodward
+  user: one
 
 missing_slug:
   slug:
@@ -20,4 +20,4 @@ missing_slug:
   contact_name: MyString
   contact_phone: MyString
   deadline: 2019-08-29 19:37:18
-  user: Karl Bernstein
+  user: missing_name
