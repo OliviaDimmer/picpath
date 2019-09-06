@@ -1,35 +1,27 @@
-%h1 Listing shoots
+%header
+  %p= link_to 'New Assignment', new_shoot_path
+  %h2 My Assignments
 
-%table
-  %thead
-    %tr
-      %th Slug
-      %th Assignment description
-      %th Start
-      %th End
-      %th Location
-      %th Contact name
-      %th Contact phone
-      %th Deadline
-      %th
-      %th
-      %th
+%ul.shoots
+  - @shoots.each do |shoot|
+    %li
+      %article
+        %h3= link_to shoot.slug, shoot
+        %p.assignment_description= link_to shoot.assignment_description, shoot
+        %p.deadline= link_to time_display(shoot.deadline), shoot
+        %ul.controls
+          %li.edit= link_to 'Edit', edit_shoot_path(shoot)
 
-  %tbody
-    - @shoots.each do |shoot|
-      %tr
-        %td= shoot.slug
-        %td= shoot.assignment_description
-        %td= shoot.start
-        %td= shoot.end
-        %td= shoot.location
-        %td= shoot.contact_name
-        %td= shoot.contact_phone
-        %td= shoot.deadline
-        %td= link_to 'Show', shoot
-        %td= link_to 'Edit', edit_shoot_path(shoot)
-        %td= link_to 'Destroy', shoot, method: :delete, data: { confirm: 'Are you sure?' }
+%h2 Recent Assignments
 
-%br
+-# Do something here to make it show shoots belonging to current_user
 
-= link_to 'New Shoot', new_shoot_path
+-# %ul.shoots
+-#   - @shoots.each do |shoot|
+-#     %li
+-#       %article
+-#         %h3= link_to shoot.slug, shoot
+-#         %p.assignment_description= link_to shoot.assignment_description, shoot
+-#         %p.deadline= link_to time_display(shoot.deadline), shoot
+-#         %ul.controls
+-#           %li.edit= link_to 'Edit', edit_shoot_path(shoot)

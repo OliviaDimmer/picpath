@@ -2,11 +2,27 @@
 %html{lang: "en"}
   %head
     %meta{charset: "UTF-8"}
-    %title Picpath
-    %meta{name: "viewport", content: "width=device-width,initial-scale=1.0,shrink-to-fit=no"}
+    %title PicPath
+    %meta{name: "viewport", content: "width=device-width, initial-scale=1.0, shrink-to-fit=no"}
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
-  %body
-    = yield
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    %body
+      %header#header
+        %h1 PicPath
+
+      %ul.horznav
+        %li= "#{current_user.name}"
+        %li= link_to "Log out", logout_url
+
+      %ul.vertnav
+        %li Home
+        %li= link_to "Assignments", shoots_path
+        %li Calendar
+        %li= link_to "Users", users_path
+        %li Settings
+      = yield
+
+    %footer#footer
+      %small Site design by Olivia Dimmer.

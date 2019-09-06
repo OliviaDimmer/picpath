@@ -1,34 +1,37 @@
 = form_for @shoot do |f|
-  - if @shoot.errors.any?
+  - if shoot.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@shoot.errors.count, "error")} prohibited this shoot from being saved:"
-      %ul
+      %h3
+        = pluralize(@shoot.errors.count, "error")
+        prohibited this shoot from being saved:
+      %ul.errors
         - @shoot.errors.full_messages.each do |message|
           %li= message
-
-  .field
-    = f.label :slug
-    = f.text_field :slug
-  .field
-    = f.label :assignment_description
-    = f.text_field :assignment_description
-  .field
-    = f.label :start
-    = f.datetime_select :start
-  .field
-    = f.label :end
-    = f.datetime_select :end
-  .field
-    = f.label :location
-    = f.text_field :location
-  .field
-    = f.label :contact_name
-    = f.text_field :contact_name
-  .field
-    = f.label :contact_phone
-    = f.text_field :contact_phone
-  .field
-    = f.label :deadline
-    = f.datetime_select :deadline
-  .actions
-    = f.submit 'Save'
+  %ul.inputs
+    %li
+      = f.label :slug
+      = f.text_field :slug, id: :shoot_slug
+    %li
+      = f.label :assignment_description
+      = f.text_area :assignment_description, id: :assignment_description, rows: 10, cols: 60
+    %li
+      = f.label :start
+      = f.datetime_field :start, id: :start
+    %li
+      = f.label :end
+      = f.datetime_field :end, id: :end
+    %li
+      = f.label :location
+      = f.text_field :location, id: :location
+    %li
+      = f.label :contact_name
+      = f.text_field :contact_name, id: :contact_name
+    %li
+      = f.label :contact_phone_number
+      = f.text_field :contact_phone_number, id: :contact_phone_number
+    %li
+      = f.label :deadline
+      = f.datetime_field :deadline, id: :deadline
+    %li.actions
+      = f.submit 'Save'
+    %li= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' }
