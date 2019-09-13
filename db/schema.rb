@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_02_153744) do
+ActiveRecord::Schema.define(version: 2019_09_12_235128) do
 
   create_table "shoots", force: :cascade do |t|
     t.string "slug"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2019_09_02_153744) do
     t.string "phone_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "admin"
   end
 
   add_foreign_key "shoots", "users"

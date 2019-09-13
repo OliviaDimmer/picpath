@@ -32,6 +32,9 @@
     %li
       = f.label :deadline
       = f.datetime_field :deadline, id: :deadline
+    %li
+      = f.label :user_name
+      = f.text_field :user_name  
     %li.actions
       = f.submit 'Save'
     %li= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' }
