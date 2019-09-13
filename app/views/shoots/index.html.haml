@@ -8,9 +8,10 @@
       %article
         %h3= link_to shoot.slug, shoot
         %p.assignment_description= link_to shoot.assignment_description, shoot
-        %p.deadline= link_to time_display(shoot.deadline), shoot
+        %p.deadline= link_to shoot.deadline, shoot
         %ul.controls
           %li.edit= link_to 'Edit', edit_shoot_path(shoot)
+          %li= link_to 'Destroy', shoot, method: :delete, data: { confirm: 'Are you sure?' }
 
 %h2 Recent Assignments
 

@@ -1,25 +1,18 @@
-%h1 Listing users
+- if @users.blank?
+  %p There are not any users currently in the system.
+- else
+  %h2 Users
 
-%table
-  %thead
-    %tr
-      %th Name
-      %th Email
-      %th Phone number
-      %th
-      %th
-      %th
-
-  %tbody
-    - @users.each do |user|
-      %tr
-        %td= user.name
-        %td= user.email
-        %td= user.phone_number
-        %td= link_to 'Show', user
-        %td= link_to 'Edit', edit_user_path(user)
-        %td= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }
-
-%br
+%p.new= link_to 'Add User', new_user_path
+%ul.shoots
+  - @users.each do |user|
+    %li
+      %article
+        %h3= link_to user.name, user
+        %p.email= link_to user.email, user
+        %p.phone_number= link_to user.phone_number, user
+        %ul.controls
+          %li.edit= link_to 'Edit', edit_user_path(user)
+          %li.destroy= link_to 'Destroy', user, method: :delete, data: { confirm: 'are you sure?' }
 
 = link_to 'New User', new_user_path

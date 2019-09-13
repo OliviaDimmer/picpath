@@ -4,12 +4,12 @@
     %li
       %h3= @shoot.slug
     %li= @shoot.assignment_description
-    %li= time_display(@shoot.start)
-    %li= time_display(@shoot.end)
+    %li= @shoot.start
+    %li= @shoot.end
     %li= @shoot.location
     %li= @shoot.contact_name
-    %li= @shoot.contact_phone_number
-    %li= time_display(@shoot.deadline)
+    %li= @shoot.contact_phone
+    %li= @shoot.deadline
 
     %ul.controls
       %li= link_to 'Edit', edit_shoot_path(@shoot)

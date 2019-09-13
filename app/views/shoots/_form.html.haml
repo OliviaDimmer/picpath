@@ -1,5 +1,5 @@
 = form_for @shoot do |f|
-  - if shoot.errors.any?
+  - if @shoot.errors.any?
     #error_explanation
       %h3
         = pluralize(@shoot.errors.count, "error")
@@ -27,14 +27,14 @@
       = f.label :contact_name
       = f.text_field :contact_name, id: :contact_name
     %li
-      = f.label :contact_phone_number
-      = f.text_field :contact_phone_number, id: :contact_phone_number
+      = f.label :contact_phone
+      = f.text_field :contact_phone, id: :contact_phone
     %li
       = f.label :deadline
       = f.datetime_field :deadline, id: :deadline
     %li
       = f.label :user_name
-      = f.text_field :user_name  
+      = f.text_field :user_name
     %li.actions
       = f.submit 'Save'
-    %li= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' }
+      = link_to 'Destroy', @shoot, method: :delete, data: { confirm: 'Are you sure?' }
