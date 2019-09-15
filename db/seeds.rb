@@ -20,27 +20,27 @@ User.create!(name: 'Carl Bernstein',
 
 Shoot.create!(slug: 'Political Rally',
   assignment_description: 'The news desk needs a gallery of photos from a political rally.',
-start: 'DateTime.new(2018,9,1,7)',
-end: 'DateTime.new(2018,9,1,12)',
-location: 'Navy Pier',
-contact_name: 'PR Agent' ,
-contact_phone_number: '555-123-4324' ,
-deadline: 'DateTime.new(2018,9,3,12)')
+  start: 'DateTime.new(2018,9,1,7)',
+  end: 'DateTime.new(2018,9,1,12)',
+  location: 'Navy Pier',
+  contact_name: 'PR Agent' ,
+  contact_phone: '555-123-4324' ,
+  deadline: 'DateTime.new(2018,9,3,12)')
 
 Shoot.create!(slug: 'Dog Feature',
   assignment_description: 'The features desk needs a picture of a dog in an animal shelter.',
-start: 'DateTime.new(2018,6,1,7)',
-end: 'DateTime.new(2018,6,1,12)',
-location: 'Anywhere',
-contact_name: 'Dog shelter' ,
-contact_phone_number: '555-555-4524' ,
-deadline: 'DateTime.new(2018,6,3,12)')
+  start: 'DateTime.new(2018,6,1,7)',
+  end: 'DateTime.new(2018,6,1,12)',
+  location: 'Anywhere',
+  contact_name: 'Dog shelter' ,
+  contact_phone: '555-555-4524' ,
+  deadline: 'DateTime.new(2018,6,3,12)')
 
 Shoot.create!(slug: 'Cubs game',
   assignment_description: 'The sports desk needs some photos of the Cubs game.',
-start: 'DateTime.new(2018,7,1,7)',
-end: 'DateTime.new(2018,7,1,10)',
-location: 'Cubs field',
-contact_name: 'Cubs press agent' ,
-contact_phone_number: '555-555-0000' ,
-deadline: 'DateTime.new(2018,7,1,12)')
+  start: 'DateTime.new(2018,7,1,7)',
+  end: 'DateTime.new(2018,7,1,10)',
+  location: 'Cubs field',
+  contact_name: 'Cubs press agent' ,
+  contact_phone: '555-555-0000' ,
+  deadline: 'DateTime.new(2018,7,1,12)')
