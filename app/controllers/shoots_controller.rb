@@ -25,6 +25,7 @@ class ShootsController < ApplicationController
   # POST /shoots.json
   def create
     @shoot = Shoot.new(shoot_params)
+    @post.user_name = current_user
 
     respond_to do |format|
       if @shoot.save
