@@ -25,7 +25,8 @@ Shoot.create!(slug: 'Political Rally',
   location: 'Navy Pier',
   contact_name: 'PR Agent' ,
   contact_phone: '555-123-4324' ,
-  deadline: 'DateTime.new(2018,9,3,12)')
+  deadline: 'DateTime.new(2018,9,3,12)',
+  user_id: '12')
 
 Shoot.create!(slug: 'Dog Feature',
   assignment_description: 'The features desk needs a picture of a dog in an animal shelter.',
@@ -34,7 +35,8 @@ Shoot.create!(slug: 'Dog Feature',
   location: 'Anywhere',
   contact_name: 'Dog shelter' ,
   contact_phone: '555-555-4524' ,
-  deadline: 'DateTime.new(2018,6,3,12)')
+  deadline: 'DateTime.new(2018,6,3,12)',
+  user_id: '1')
 
 Shoot.create!(slug: 'Cubs game',
   assignment_description: 'The sports desk needs some photos of the Cubs game.',
@@ -43,4 +45,5 @@ Shoot.create!(slug: 'Cubs game',
   location: 'Cubs field',
   contact_name: 'Cubs press agent' ,
   contact_phone: '555-555-0000' ,
-  deadline: 'DateTime.new(2018,7,1,12)')
+  deadline: 'DateTime.new(2018,7,1,12)',
+  user_id: '123')
