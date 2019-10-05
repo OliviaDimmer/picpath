@@ -1,5 +1,5 @@
 %header
-  %p.new= link_to 'New Assignment', new_shoot_path
+  %p.button= link_to 'New Assignment', new_shoot_path
   %h2 My Assignments
 
 %ul.shoots
@@ -10,7 +10,7 @@
         %p.assignment_description= link_to shoot.assignment_description, shoot
         %p.deadline= link_to shoot.deadline, shoot
         %ul.controls
-          %li.edit= link_to 'Edit', edit_shoot_path(shoot)
+          %li= link_to 'Edit', edit_shoot_path(shoot)
           %li= link_to 'Destroy', shoot, method: :delete, data: { confirm: 'Are you sure?' }
 
 %h2 Recent Assignments
