@@ -1,6 +1,6 @@
 class Shoot < ApplicationRecord
   validates :slug, :assignment_description, :start, :end, :location, :contact_name, :contact_phone, :deadline, presence: true
-  belongs_to :user
+  belongs_to :user, optional: true
 
   def user_name=(name)
     self.user = User.find_or_create_by(name: name)
@@ -19,7 +19,7 @@ class Shoot < ApplicationRecord
     shoot.klass = "PUBLIC"
     shoot.created = self.created_at
     shoot.last_modified = self.updated_at
-    shoot.uid = event.url = "#{PUBLIC_URL}events/#{self.id}"
+    shoot.uid = shoot.url = "#{PUBLIC_URL}events/#{self.id}"
     event
   end
 end
