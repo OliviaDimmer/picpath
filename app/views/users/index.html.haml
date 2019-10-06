@@ -3,7 +3,7 @@
 - else
   %h2 Users
 
-%p.new= link_to 'Add User', new_user_path
+%p.button= link_to 'Add User', new_user_path
 %ul.shoots
   - @users.each do |user|
     %li
@@ -14,5 +14,3 @@
         %ul.controls
           %li.edit= link_to 'Edit', edit_user_path(user)
           %li.destroy= link_to 'Destroy', user, method: :delete, data: { confirm: 'are you sure?' }
-
-= link_to 'New User', new_user_path
