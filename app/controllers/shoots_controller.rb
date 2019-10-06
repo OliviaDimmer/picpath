@@ -63,25 +63,24 @@ class ShootsController < ApplicationController
   end
 
   def ics_export
-    @myevents = Shoot.all
+    @event = Shoot.find(params[:id])
     respond_to do |format|
       format.html
       format.ics do
         cal = Icalendar::Calendar.new
-        @myevents.each do |myevent|
            event = Icalendar::Event.new
-           shoot.slug = myevent.summary
-           shoot.start = myevent.dtstart
-           shoot.end = myevent.dtend
-           shoot.location = myevent.location
-           shoot.assignment_description = myevent.description
+           event.dtstart = @shoot.start
+           event.dtend = @shoot.end
+           event.summary = @shoot.slug
+           event.description = @shoot.assignment_description
+           event.location = @shoot.location
            cal.add_event(event)
            cal.publish
-         end
-         render :text =>  cal.to_ical
+           render :plain =>  cal.to_ical
        end
      end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
