@@ -27,6 +27,7 @@ gem 'jbuilder', '~> 2.7'
 # Google Auth
 gem 'google-api-client', require: 'google/apis/calendar_v3'
 gem 'omniauth-google-oauth2'
+gem 'icalendar'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
