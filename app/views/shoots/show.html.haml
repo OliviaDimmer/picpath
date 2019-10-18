@@ -15,8 +15,6 @@
       %li= link_to 'Edit', edit_shoot_path(@shoot)
       %li= link_to 'Destroy', @shoot, method: :delete, data: { confirm: 'are you sure?' }
 
--# %p.button= link_to 'Add to calendar', ics_export_path(@shoot)
-
-%p.button= link_to 'Add to calendar', :controller => 'shoots', :action => :ics_export, :format => :ics
+%p.button= link_to 'Add to calendar', ics_export_path(@shoot)
 
 %p.back= link_to 'Back', shoots_path

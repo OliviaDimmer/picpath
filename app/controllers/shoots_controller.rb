@@ -64,21 +64,21 @@ class ShootsController < ApplicationController
 
   def ics_export
     @event = Shoot.find(params[:id])
-    respond_to do |format|
-      format.html
-      format.ics do
-        cal = Icalendar::Calendar.new
-           event = Icalendar::Event.new
-           event.dtstart = @shoot.start
-           event.dtend = @shoot.end
-           event.summary = @shoot.slug
-           event.description = @shoot.assignment_description
-           event.location = @shoot.location
-           cal.add_event(event)
-           cal.publish
-           render :plain =>  cal.to_ical
-       end
-     end
+    cal = Icalendar::Calendar.new
+    cal.event do |e|
+      e.dtstart     = Icalendar::Values::Date.new('20050428')
+      e.dtend       = Icalendar::Values::Date.new('20050429')
+      e.summary     = "Meeting with the man."
+      e.description = "Have a long lunch meeting and decide nothing..."
+      e.ip_class    = "PRIVATE"
+      # e.dtstart = @shoot.start
+      # e.dtend = @shoot.end
+      # e.summary = @shoot.slug
+      # e.description = @shoot.assignment_description
+      # e.location = @shoot.location
+    end
+    cal.publish
+    send_data cal.to_ical, type: 'text/calendar', disposition: 'attachment', filename: 'NewEvent'
   end
 
 
