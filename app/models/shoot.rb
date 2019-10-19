@@ -10,4 +10,5 @@ class Shoot < ApplicationRecord
     self.user ? self.user.name : nil
   end
 
+
 end

@@ -63,24 +63,19 @@ class ShootsController < ApplicationController
   end
 
   def ics_export
-    @event = Shoot.find(params[:id])
+    @shoot = Shoot.find(params[:id])
     cal = Icalendar::Calendar.new
     cal.event do |e|
-      e.dtstart     = Icalendar::Values::Date.new('20050428')
-      e.dtend       = Icalendar::Values::Date.new('20050429')
-      e.summary     = "Meeting with the man."
-      e.description = "Have a long lunch meeting and decide nothing..."
+      e.dtstart     = Icalendar::Values::Date.new(@shoot.start)
+      e.dtend       = Icalendar::Values::Date.new(@shoot.end)
+      e.summary     = @shoot.slug
+      e.description = @shoot.assignment_description
+      e.location = @shoot.location
       e.ip_class    = "PRIVATE"
-      # e.dtstart = @shoot.start
-      # e.dtend = @shoot.end
-      # e.summary = @shoot.slug
-      # e.description = @shoot.assignment_description
-      # e.location = @shoot.location
     end
     cal.publish
-    send_data cal.to_ical, type: 'text/calendar', disposition: 'attachment', filename: 'NewEvent'
+    send_data cal.to_ical, type: 'text/calendar', disposition: 'attachment', filename: 'NewShoot'
   end
-
 
   private
     # Use callbacks to share common setup or constraints between actions.
