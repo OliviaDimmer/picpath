@@ -6,7 +6,8 @@
 /* stylelint-disable*/
 a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section{display:block}html{line-height:1}body{line-height:inherit}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
 /* stylelint-enable */
-
+@import "font-awesome-sprockets";
+@import "font-awesome";
 // Site-wide variables
 $primary_color: #414141;
 $base_font_size: 20px;
@@ -18,19 +19,12 @@ $base_font_size: 20px;
 //@function typographic_scale($ratio,$interval,$base:$base_font_size) {
 //  @return $base * ($ratio  $interval) * 1px;
 //}
-
 /* Base Styles (HTML Selectors) */
 html {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: px-to-em($base_font_size,16px); /* 20 / 16 = 1.25 */
   color: $primary_color;
   line-height: px-to-em(24px);
-}
-
-@font-face {
-  font-family: "Glyphicons Halflings";
-  src: url('/assets/glyphicons-halflings-regular.eot');
-  src: url('/assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('/assets/glyphicons-halflings-regular.woff') format('woff'), url('/assets/glyphicons-halflings-regular.ttf') format('truetype'), url('/assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 
 h1 {
@@ -70,6 +64,12 @@ article {
   background-color: white;
 }
 
+.fa {
+  color:white;
+  margin: 0 1em 1em 0;
+  font-size: 2em;
+}
+
 .greeting {
   color:white;
   margin:0 0 0 2em;
@@ -104,16 +104,17 @@ a {
 
 }
 
-.controls li a{
-
+.controls li a {
   color: white;
 }
 
 .vertnav {
-  padding: 2em;
+  padding: 1em;
+  display:flex;
+  flex-direction: column;
   background-color: #52A5A5;
   height: 100%; /* 100% Full-height */
-  width: 5em; /* 0 width - change this with JavaScript */
+  width: 12em; /* 0 width - change this with JavaScript */
   position: fixed; /* Stay in place */
   z-index: 1; /* Stay on top */
   top: 0;
@@ -123,13 +124,11 @@ a {
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
 }
 
-.vertnav li {
-  margin: 1em 0 1em 0;
-}
-
-.vertnav li a {
+.vertnav a {
+  margin: 1em 1em 1em 0;
   color:white;
 }
+
 
 
 .destroy {
@@ -171,6 +170,7 @@ margin: 3em 2em 1em 2em;
 text-decoration:underline;
 
 }
+
 
 small {
   color: white;

@@ -18,11 +18,20 @@
         -# %li= link_to "Log out", logout_url
 
       %ul.vertnav
-        %i.oi.oi-menu
-        %img(src="/open-iconic/svg/menu.svg")
-        %li= link_to_unless_current "Home", shoots_path
-        %li My Assignments
-        %li Calendar
-        %li= link_to_unless_current "Users", users_path
-        %li Settings
+        %li= fa_icon("bars")
+        = link_to shoots_path do
+          %span.fa.fa-home
+          Home
+        = link_to shoots_path do
+          %span.fa.fa-camera
+          My Assignments
+        = link_to shoots_path do
+          %span.fa.fa-calendar
+          Calendar
+        = link_to users_path do
+          %span.fa.fa-user
+          Users
+        = link_to shoots_path do
+          %span.fa.fa-gear
+          Settings
       = yield
