@@ -1,13 +1,13 @@
 %header
-  %h2 All Assignments
   %p.button= link_to 'New Assignment', new_shoot_path
+  %h2 All Assignments
 
 %ul
   %li.shoot
-    %p Slug
-    %p Start
-    %p Assignment Description
-    %p Deadline
+    %p.index SLUG
+    %p.index START
+    %p.index ASSIGNMENT DESCRIPTION
+    %p.index DEADLINE
 
 %ul
   - @shoots.each do |shoot|
