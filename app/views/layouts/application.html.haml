@@ -8,30 +8,32 @@
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    -# = javascript_include_tag "/open-iconic/font/css/open-iconic-bootstrap.css"
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
     %body
       %header#header
         %h1 PICPATH
 
-      %ul.horznav
+      -# %ul.horznav
         -# %li= "#{current_user.name}"
         -# %li= link_to "Log out", logout_url
 
-      %ul.vertnav
-        %li= fa_icon("bars")
+      %nav.nav.flex-column
+        %button.navbar-toggler{"aria-controls" => "navbarToggleExternalContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarToggleExternalContent", "data-toggle" => "collapse", type: "button"}
+          %span.fa.fa-bars.fa-2x.fa-fw
         = link_to shoots_path do
-          %span.fa.fa-home
+          %span.fa.fa-home.fa-2x.fa-fw
           Home
         = link_to shoots_path do
-          %span.fa.fa-camera
+          %span.fa.fa-camera.fa-2x.fa-fw
           My Assignments
         = link_to shoots_path do
-          %span.fa.fa-calendar
+          %span.fa.fa-calendar.fa-2x.fa-fw
           Calendar
         = link_to users_path do
-          %span.fa.fa-user
+          %span.fa.fa-user.fa-2x.fa-fw
           Users
         = link_to shoots_path do
-          %span.fa.fa-gear
+          %span.fa.fa-gear.fa-2x.fa-fw
           Settings
-      = yield
+
+  = yield

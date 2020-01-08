@@ -19,3 +19,7 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+$('.button.navbar-toggler').click(function(e) {
+				$('.navbar-primary').toggleClass('collapsed');
+});

@@ -16,6 +16,8 @@ $base_font_size: 20px;
   @return ($target / $context) * 1em;
 }
 
+// Custom bootstrap variables must be set or imported *before* bootstrap.
+@import "bootstrap";
 //@function typographic_scale($ratio,$interval,$base:$base_font_size) {
 //  @return $base * ($ratio  $interval) * 1px;
 //}
@@ -66,7 +68,7 @@ article {
 
 .fa {
   color:white;
-  margin: 0 1em 1em 0;
+  margin: 0 .5em 1em 0;
   font-size: 2em;
 }
 
@@ -108,17 +110,10 @@ a {
   color: white;
 }
 
-.vertnav {
+.nav {
   padding: 1em;
-  display:flex;
-  flex-direction: column;
   background-color: #52A5A5;
   height: 100%; /* 100% Full-height */
-  width: 12em; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
-  top: 0;
-  left: 0;
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
@@ -129,12 +124,9 @@ a {
   color:white;
 }
 
-
-
 .destroy {
   background-color: #F69999;
 }
-
 
 .inputs li {
   margin: 2em;
@@ -149,7 +141,8 @@ a {
 
 .shoot p {
 
-margin-left: 2em;
+flex-grow: 1;
+justify-content: flex-start;
 }
 
 #assignment_description{
