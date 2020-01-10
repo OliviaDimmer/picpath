@@ -23,8 +23,9 @@ Shoot.destroy_all
   start: 'DateTime.new(2018,9,1,7)',
   end: 'DateTime.new(2018,9,1,12)',
   location: 'Navy Pier',
-  contact_name: 'PR Agent' ,
-  contact_phone: '555-123-4324' ,
+  contact_name: 'PR Agent',
+  contact_phone: '555-123-4324',
+  desk: 'News',
   deadline: 'DateTime.new(2018,9,3,12)')
 
 @shoot = Shoot.create(slug: 'Cubs game',
@@ -34,6 +35,7 @@ Shoot.destroy_all
   location: 'Cubs field',
   contact_name: 'Cubs press agent' ,
   contact_phone: '555-555-0000' ,
+  desk: 'Sports',
   deadline: 'DateTime.new(2018,7,1,12)')
 
 @shoot = Shoot.create(slug: 'Dog Feature',
@@ -43,4 +45,5 @@ Shoot.destroy_all
   location: 'Anywhere',
   contact_name: 'Dog shelter' ,
   contact_phone: '555-555-4524' ,
+  desk: 'Features',
   deadline: 'DateTime.new(2018,6,3,12)')

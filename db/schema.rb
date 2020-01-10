@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_12_235128) do
+ActiveRecord::Schema.define(version: 2020_01_10_003821) do
 
   create_table "shoots", force: :cascade do |t|
     t.string "slug"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2019_09_12_235128) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
+    t.string "desk"
     t.index ["user_id"], name: "index_shoots_on_user_id"
   end
 
@@ -34,6 +35,8 @@ ActiveRecord::Schema.define(version: 2019_09_12_235128) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "admin"
+    t.string "google_token"
+    t.string "google_refresh_token"
   end
 
   add_foreign_key "shoots", "users"
