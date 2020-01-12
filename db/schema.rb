@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_10_003821) do
+ActiveRecord::Schema.define(version: 2020_01_12_223613) do
 
   create_table "shoots", force: :cascade do |t|
     t.string "slug"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2020_01_10_003821) do
     t.boolean "admin"
     t.string "google_token"
     t.string "google_refresh_token"
+    t.string "uid"
   end
 
   add_foreign_key "shoots", "users"
