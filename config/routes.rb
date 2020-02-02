@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get '/login', to: 'sessions#login', as: 'login'
+  # get '/login', to: 'sessions#login', as: 'login'
+  get '/login', to: redirect('/auth/google_oauth2')
   get '/logout', to: 'sessions#logout', as: 'logout'
   get 'auth/:provider/callback', to: 'sessions#googleAuth'
   get 'auth/failure', to: redirect('/')
