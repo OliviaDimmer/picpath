@@ -12,10 +12,6 @@
     %body
       %header#header
         %h1 PICPATH
-
-      %ul.horznav
-        %li= "#{current_user.name}"
-        %li= link_to "Log out", logout_url
     %div.container
       %div.navcontainer
         %nav.nav.flex-column
@@ -37,4 +33,7 @@
             %span.fa.fa-gear.fa-2x.fa-fw
             Settings
       %div.yieldcontainer
+        %ul.horznav
+          %li= "Hello, #{current_user.name}"
+          %li= link_to "Log out", logout_url
         = yield
