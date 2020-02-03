@@ -85,6 +85,6 @@ class ShootsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def shoot_params
-      params.require(:shoot).permit(:slug, :assignment_description, :start, :end, :location, :contact_name, :contact_phone, :desk, :deadline, :user_name)
+      params.require(:shoot).permit(:slug, :assignment_description, :start, :end, :location, :contact_name, :contact_phone, :desk, :deadline, :user_assigned, :user_name)
     end
 end

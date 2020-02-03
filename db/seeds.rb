@@ -13,6 +13,11 @@ Shoot.destroy_all
  phone_number: '810-448-7321',
  admin: 'false')
 
+ @user = User.create(name: 'Photo Steve',
+  email: 'psteve@press.com',
+  phone_number: '810-448-7321',
+  admin: 'false')
+
 @user = User.create(name: 'Carl Bernstein',
   email: 'cbernstein@press.com',
   phone_number: '810-448-7344',
@@ -26,7 +31,9 @@ Shoot.destroy_all
   contact_name: 'PR Agent',
   contact_phone: '555-123-4324',
   desk: 'News',
-  deadline: 'DateTime.new(2018,9,3,12)')
+  deadline: 'DateTime.new(2018,9,3,12)',
+  user_assigned: 'Carl Bernstein',
+)
 
 @shoot = Shoot.create(slug: 'Cubs game',
   assignment_description: 'The sports desk needs some photos of the Cubs game.',
@@ -36,7 +43,8 @@ Shoot.destroy_all
   contact_name: 'Cubs press agent' ,
   contact_phone: '555-555-0000' ,
   desk: 'Sports',
-  deadline: 'DateTime.new(2018,7,1,12)')
+  deadline: 'DateTime.new(2018,7,1,12)',
+  user_assigned: 'Photo Steve')
 
 @shoot = Shoot.create(slug: 'Dog Feature',
   assignment_description: 'The features desk needs a picture of a dog in an animal shelter.',
@@ -46,4 +54,5 @@ Shoot.destroy_all
   contact_name: 'Dog shelter' ,
   contact_phone: '555-555-4524' ,
   desk: 'Features',
-  deadline: 'DateTime.new(2018,6,3,12)')
+  deadline: 'DateTime.new(2018,6,3,12)',
+  user_assigned: 'Photo Steve')

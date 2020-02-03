@@ -33,6 +33,9 @@
     %li
       = f.label :deadline
       = f.datetime_field :deadline, id: :deadline
+    %li
+      = f.label :user_assigned
+      = f.collection_select :user_assigned, User.order(:name),:id,:name, include_blank: true
     %li.actions
       = f.submit 'Save'
       = link_to 'Destroy', @shoot, method: :delete, data: { confirm: 'Are you sure?' }

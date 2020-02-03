@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_12_223613) do
+ActiveRecord::Schema.define(version: 2020_02_03_003308) do
 
   create_table "shoots", force: :cascade do |t|
     t.string "slug"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2020_01_12_223613) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
     t.string "desk"
+    t.string "user_assigned"
     t.index ["user_id"], name: "index_shoots_on_user_id"
   end
 
