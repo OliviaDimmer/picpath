@@ -1,15 +1,13 @@
 %p#notice= notice
+%article
+  %ul
+    %li
+      %h3= @user.name
+    %li= @user.email
+    %li= @user.phone_number
 
-%p
-  %b Name:
-  = @user.name
-%p
-  %b Email:
-  = @user.email
-%p
-  %b Phone number:
-  = @user.phone_number
+    %ul.controls
+      %li= link_to 'Edit', edit_user_path(@user)
+      %li= link_to 'Destroy', @user, method: :delete, data: { confirm: 'are you sure?' }
 
-= link_to 'Edit', edit_user_path(@user)
-\|
-= link_to 'Back', users_path
+%p.back= link_to 'Back', users_path

@@ -1,16 +1,20 @@
+%p.button= link_to 'Add User', new_user_path
+
 - if @users.blank?
   %p There are not any users currently in the system.
 - else
   %h2 Users
 
-%p.button= link_to 'Add User', new_user_path
-%ul.shoots
+
+%ul
+  %li.shoot
+    %p.index NAME
+    %p.index EMAIL
+    %p.index PHONE
+
+%ul
   - @users.each do |user|
-    %li
-      %article
-        %h3= link_to user.name, user
-        %p.email= link_to user.email, user
-        %p.phone_number= link_to user.phone_number, user
-        %ul.controls
-          %li.edit= link_to 'Edit', edit_user_path(user)
-          %li.destroy= link_to 'Destroy', user, method: :delete, data: { confirm: 'are you sure?' }
+    %li.shoot
+      %p= link_to user.name, user
+      %p= link_to user.email, user
+      %p= link_to user.phone_number, user
