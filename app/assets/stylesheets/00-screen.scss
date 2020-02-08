@@ -95,6 +95,7 @@ a {
   flex-direction: row;
   flex-flow: wrap;
   justify-content: flex-start;
+  margin: 1em 0 1em 0;
 }
 
 .controls li {
@@ -138,6 +139,10 @@ a {
   display: flex;
   flex-direction: row;
   justify-content: left;
+}
+
+ul.show {
+  padding: 2em;
 }
 
 .shoot p {
