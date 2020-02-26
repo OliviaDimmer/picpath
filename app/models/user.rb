@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  validates :name, :phone_number, :email, presence: true
+  # validates :name, :phone_number, :email, presence: true
   has_many :shoots, dependent: :delete_all
 
   def self.from_omniauth(auth)

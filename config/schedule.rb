@@ -1,3 +1,3 @@
-every 1.day, :at => "9am" do
+every 1.day, :at => "5am" do
   rake "notifications:send"
 end
