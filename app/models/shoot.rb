@@ -24,7 +24,7 @@ class Shoot < ApplicationRecord
 
    def send_assigned_email
      if user_assigned_changed?
-       ProductMailer.assigned_email(self).deliver_later
+       UserMailer.assigned_email(self).deliver_later
      end
    end
  end

@@ -7,11 +7,11 @@ class UserMailer < ApplicationMailer
     mail(to: @user.email, subject: 'Welcome to PicPath!')
   end
 
-  def daily_stakeholder_events_to_user
+  def assigned_email
       @user = params[:user]
       @shoots = []
 
-      mail(to: @user.email, subject: "Here's your agenda for today.")
+      mail(to: @user.email, subject: "You've been assigned a shoot.")
     end
 
 end
