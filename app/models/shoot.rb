@@ -20,11 +20,11 @@ class Shoot < ApplicationRecord
       end
     end
 
-  private
+private
 
-   def send_assigned_email
-     if user_assigned_changed?
-       UserMailer.assigned_email(self).deliver_later
-     end
-   end
+  def send_assigned_email
+    if user_assigned_changed?
+      UserMailer.assigned_email(self).deliver_later
+    end
+  end
  end
