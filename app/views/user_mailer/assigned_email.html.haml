@@ -3,6 +3,5 @@
   %head
     %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
   %body
-    %h1 Here's your agenda for today, #{@user.name}
-    %p You have #{@shoots.count} #{"shoot".pluralize(@shoots.count)} assigned to you today.
+    %h1 You've been assigned a shoot, #{@user.name}
     %p Visit #{@url} for more details.
