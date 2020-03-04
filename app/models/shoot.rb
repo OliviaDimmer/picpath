@@ -1,6 +1,8 @@
 class Shoot < ApplicationRecord
   validates :slug, :assignment_description, :start, :end, :location, :contact_name, :contact_phone, :deadline, presence: true
   belongs_to :user, optional: true
+  # Callbacks
+  after_save :send_assigned_email
 
   def user_name=(name)
     self.user = User.find_or_create_by(name: name)
@@ -18,4 +20,11 @@ class Shoot < ApplicationRecord
       end
     end
 
-end
+  private
+
+   def send_assigned_email
+     if shoot_assigned?
+       ProductMailer.assigned_email(self).deliver_later
+     end
+   end
+ end
