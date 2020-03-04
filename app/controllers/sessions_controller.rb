@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
     refresh_token = access_token.credentials.refresh_token
     user.google_refresh_token = refresh_token if refresh_token.present?
     user.save
-    # self.current_user = @user
+    self.current_user = @user
     redirect_to shoots_url
   end
   def login
@@ -20,10 +20,5 @@ class SessionsController < ApplicationController
   def logout
     reset_session
     redirect_to login_url, notice: "You have been logged out."
-  end
-  # def authenticate_user
-  #   unless user_signed_in?
-  #     redirect_to google_auth_url(origin: request.url)
-  #   end
   end
 end
