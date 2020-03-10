@@ -9,7 +9,7 @@ class UserMailer < ApplicationMailer
 
   def assigned_email
       @user = params[:user]
-      @shoots = []
+      @shoot = []
 
       mail(to: @user.email, subject: "You've been assigned a shoot.")
     end
