@@ -16,7 +16,7 @@ class UserMailer < ApplicationMailer
   def reminder_email
     @user = params[:user]
     @shoot = []
-    mail(to: @user.email, subject: "You have a shoot assigned to you tomorrow")
+    mail(to: @user.email, subject: "You have a shoot happening soon")
   end
 
 end
