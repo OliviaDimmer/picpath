@@ -10,12 +10,12 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 @import "font-awesome";
 // Site-wide variables
 $primary_color: #414141;
-$base_font_size: 20px;
+$base_font_size: 10px;
 // Site-wide functions
 @function px-to-em($target,$context:$base_font_size) {
   @return ($target / $context) * 1em;
 }
-
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 //@function typographic_scale($ratio,$interval,$base:$base_font_size) {
@@ -23,14 +23,14 @@ $base_font_size: 20px;
 //}
 /* Base Styles (HTML Selectors) */
 html {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: px-to-em($base_font_size,16px); /* 20 / 16 = 1.25 */
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-size: px-to-em($base_font_size,10px); /* 20 / 16 = 1.25 */
   color: $primary_color;
   line-height: px-to-em(24px);
 }
 
 h1 {
-  font-size: px-to-em(45px);
+  font-size: px-to-em(25px);
   line-height: px-to-em(48px,45px);
   letter-spacing: .2em;
   color: white;
@@ -43,12 +43,13 @@ a { color:black;
 }
 
 h2 {
-  font-size: px-to-em(30px);
+  font-size: px-to-em(20px);
   margin: 1em 0 1em 0;
   color: #52A5A5;
   padding: 1em 0 1em 1.5em;
 }
 h3 {
+  font-size: px-to-em(20px);
   font-weight: bold;
   margin: 2em 0 2em 0;
   color:black;
