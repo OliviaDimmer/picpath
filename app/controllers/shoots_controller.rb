@@ -1,6 +1,6 @@
 class ShootsController < ApplicationController
   before_action :set_shoot, only: [:show, :edit, :update, :destroy]
-  # before_action :authenticate_user
+  before_action :authenticate_user
 
   # GET /shoots
   # GET /shoots.json
@@ -25,8 +25,8 @@ class ShootsController < ApplicationController
   # POST /shoots
   # POST /shoots.json
   def create
-    # @shoot = Shoot.new(shoot_params)
-    # @post.user_name = current_user
+    @shoot = Shoot.new(shoot_params)
+    @shoot.user_name = current_user
 
     respond_to do |format|
       if @shoot.save
