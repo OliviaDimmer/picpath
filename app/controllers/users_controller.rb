@@ -27,16 +27,15 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     respond_to do |format|
-          if @user.save
-            # Tell the UserMailer to send a welcome email after save
-            UserMailer.with(user: @user).welcome_email.deliver_later
+        if @user.save
+          # Tell the UserMailer to send a welcome email after save
+          UserMailer.with(user: @user).welcome_email.deliver_later
 
-            format.html { redirect_to(@user, notice: 'User was successfully created.') }
-            format.json { render json: @user, status: :created, location: @user }
-          else
-            format.html { render action: 'new' }
-            format.json { render json: @user.errors, status: :unprocessable_entity }
-          end
+          format.html { redirect_to(@user, notice: 'User was successfully created.') }
+          format.json { render json: @user, status: :created, location: @user }
+        else
+          format.html { render action: 'new' }
+          format.json { render json: @user.errors, status: :unprocessable_entity }
         end
       end
     end
@@ -73,5 +72,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email, :phone_number)
+      params.require(:user).permit(:name, :email, :phone_number, :admin)
     end
+end

@@ -21,4 +21,10 @@ class SessionsController < ApplicationController
     reset_session
     redirect_to login_url, notice: "You have been logged out."
   end
+
+
+private
+  def auth
+    request.env['omniauth.auth']
+  end
 end
