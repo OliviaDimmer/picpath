@@ -1,6 +1,6 @@
 class ShootsController < ApplicationController
   before_action :set_shoot, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user
+  # before_action :authenticate_user
 
   # GET /shoots
   # GET /shoots.json
