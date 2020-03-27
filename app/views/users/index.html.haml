@@ -5,16 +5,16 @@
 - else
   %h2 Users
 
+%section.indexview
+  %ul
+    %li.shootlabel
+      %p.index NAME
+      %p.index EMAIL
+      %p.index PHONE
 
-%ul
-  %li.shoot
-    %p.index NAME
-    %p.index EMAIL
-    %p.index PHONE
-
-%ul
-  - @users.each do |user|
-    %li.shoot
-      %p= link_to user.name, user
-      %p= link_to user.email, user
-      %p= link_to user.phone_number, user
+  %ul
+    - @users.each do |user|
+      %li.shoot
+        %p= link_to user.name, user
+        %p= link_to user.email, user
+        %p= link_to user.phone_number, user
