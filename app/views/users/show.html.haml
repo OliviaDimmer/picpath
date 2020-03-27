@@ -1,9 +1,11 @@
 %p#notice= notice
 %article
-  %ul.show
-    %li
-      %h3= @user.name
+  %ul.showview
+    %li.show Name
+    %li= @user.name
+    %li.show Email
     %li= @user.email
+    %li.show Phone number
     %li= @user.phone_number
 
     %ul.controls
