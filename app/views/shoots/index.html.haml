@@ -2,17 +2,18 @@
   %p.button= link_to 'New Assignment', new_shoot_path
   %h2 All Assignments
 
-%ul
-  %li.shoot
-    %p.index SLUG
-    %p.index START
-    %p.index ASSIGNMENT DESCRIPTION
-    %p.index DEADLINE
+%section.indexview
+  %ul
+    %li.shootlabel
+      %p.index SLUG
+      %p.index START
+      %p.index ASSIGNMENT DESCRIPTION
+      %p.index DEADLINE
 
-%ul
-  - @shoots.each do |shoot|
-    %li.shoot
-      %p= link_to shoot.slug, shoot
-      %p= link_to shoot.start, shoot
-      %p= link_to shoot.assignment_description, shoot
-      %p= link_to shoot.deadline, shoot
+  %ul
+    - @shoots.each do |shoot|
+      %li.shoot
+        %p= link_to shoot.slug, shoot
+        %p= link_to shoot.start, shoot
+        %p= link_to shoot.assignment_description, shoot
+        %p= link_to shoot.deadline, shoot

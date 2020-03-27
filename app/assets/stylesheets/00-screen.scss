@@ -24,7 +24,7 @@ $base_font_size: 10px;
 /* Base Styles (HTML Selectors) */
 html {
   font-family: "Source Sans Pro", Helvetica, sans-serif;
-  font-size: px-to-em($base_font_size,10px); /* 20 / 16 = 1.25 */
+  font-size: px-to-em($base_font_size,10px);
   color: $primary_color;
   line-height: px-to-em(24px);
 }
@@ -55,7 +55,7 @@ h2 {
 h3 {
   font-size: px-to-em(20px);
   font-weight: bold;
-  margin: 2em 0 2em 0;
+  margin: 1em 0 2em 0;
   color:black;
 }
 
@@ -141,25 +141,13 @@ a {
 }
 
 .shoot {
-  display: flex;
-  flex-direction: row;
-  justify-content: left;
+
 }
 
 ul.show {
   padding: 2em;
 }
 
-.shoot p {
-
-flex-grow: 1;
-justify-content: flex-start;
-}
-
-.index {
-
-  font-weight: bold;
-}
 
 #assignment_description{
   display: block;
@@ -223,9 +211,50 @@ margin-top: 1em;
 @media screen and (min-width: 1200px) {
 
   .shoot {
-    margin: 1em 1em 1em 2em;
+    padding: 2em 1em 2em 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+  }
+
+  li.shoot  p {
+    flex-grow: 1;
+    justify-content: flex-start;
+
+  }
+
+  .shootlabel {
+    background-color: #F5F6FA;
+    padding: .5em 1em 0em 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+  }
+
+  .shootlabel p {
+
+  flex-grow: 1;
+  justify-content: flex-start;
+  }
+
+  .index {
+    color:#A3A6B4;
+    font-weight: bold;
+  }
+
+  .indexview {
     background-color: white;
-    padding: 1em;
+    margin:2em;
+    padding:2em;
+  }
+
+  .show {
+  color:#52A5A5;
+
+  }
+
+  .showview {
+    padding: 2em;
   }
 
   body {

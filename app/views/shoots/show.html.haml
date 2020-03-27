@@ -1,24 +1,24 @@
 %p#notice= notice
 %article
-  %ul.show
-    %li
-      %h3= @shoot.slug
-    %li.index Assignment description
+  %ul.showview
+    %li.show Slug
+    %li= @shoot.slug
+    %li.show Assignment description
     %li= @shoot.assignment_description
-    %li.index Start time
+    %li.show Start time
     %li= @shoot.start
-    %li.index End time
+    %li.show End time
     %li= @shoot.end
-    %li.index Location
+    %li.show Location
     %li= @shoot.location
-    %li.index Contact information
+    %li.show Contact information
     %li= @shoot.contact_name
     %li= @shoot.contact_phone
-    %li.index Desk
+    %li.show Desk
     %li= @shoot.desk
-    %li.index Deadline
+    %li.show Deadline
     %li= @shoot.deadline
-    %li.index Assigned to
+    %li.show Assigned to
     %li= @shoot.user_assigned
 
     %ul.controls
