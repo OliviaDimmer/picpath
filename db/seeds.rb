@@ -11,17 +11,20 @@ Shoot.destroy_all
 @user = User.create(name: 'Bob Woodward',
  email: 'bwoodward@press.com',
  phone_number: '810-448-7321',
- admin: 'false')
+ admin: 'false',
+ uid: '999')
 
  @user = User.create(name: 'Photo Steve',
   email: 'psteve@press.com',
   phone_number: '810-448-7321',
-  admin: 'false')
+  admin: 'false',
+  uid: '888')
 
 @user = User.create(name: 'Carl Bernstein',
   email: 'cbernstein@press.com',
   phone_number: '810-448-7344',
-  admin: 'true')
+  admin: 'true',
+  uid: '777')
 
 @shoot = Shoot.create(slug: 'Political Rally',
   assignment_description: 'The news desk needs a gallery of photos from a political rally.',
